@@ -1,4 +1,4 @@
-// Show creativity and exceed the core requirements by adding the ability to auto-save
+// Showed creativity and exceeded the core requirements by adding the ability to auto-save
 
 using System;
 using System.Collections.Generic;
