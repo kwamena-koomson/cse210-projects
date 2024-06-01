@@ -1,38 +1,4 @@
 using System;
-using System.Collections.Generic;
-
-class Video
-{
-    public string Title { get; set; }
-    public string Author { get; set; }
-    public string Length { get; set; }
-    public List<string> Comments { get; }
-
-    public Video(string title, string author, string length)
-    {
-        Title = title;
-        Author = author;
-        Length = length;
-        Comments = new List<string>();
-    }
-
-    public void AddComment(string commenter, string comment)
-    {
-        Comments.Add($"[{commenter}]: {comment}");
-    }
-
-    public void DisplayVideoInfo()
-    {
-        Console.WriteLine($"Title: {Title}");
-        Console.WriteLine($"Author: {Author}");
-        Console.WriteLine($"Length: {Length} seconds");
-        Console.WriteLine("Comments:");
-        foreach (var comment in Comments)
-        {
-            Console.WriteLine(comment);
-        }
-    }
-}
 
 class Program
 {
@@ -40,20 +6,21 @@ class Program
     {
         List<Video> videos = new List<Video>();
 
-        Video video1 = new Video("Understanding Python's Logical Operators", "Python Master", "302");
-        video1.AddComment("@PythonFan123", "Great explanation!");
-        video1.AddComment("@Coder123", "I understood it better now, thanks!");
-        video1.AddComment("@CodeNewbie", "Could you make a video on loops next?");
+        Video video1 = new Video("What are logical operators?", "Bro Code", "302");
+        video1.AddComment("@LetsGoSalmon", "Hi! Are we getting any more C++ content this year?");
+        video1.AddComment("@alfiemathias4710", "Very useful thanks");
+        video1.AddComment("@karnprashantpk", "#include <love for BroCode>");
 
-        Video video2 = new Video("Mastering Game Jams in Unity", "UnityPro", "541");
-        video2.AddComment("@UnityFanatic", "Really helpful video, thanks!");
-        video2.AddComment("@GameDevGuru", "I've been waiting for this!");
-        video2.AddComment("@CodeMaster", "Can't wait to try this out!");
+        Video video2 = new Video("HOW TO GAME JAM!", "Brackeys", "541");
+        video2.AddComment("@Dorbellprod", "The worst part about game jams is that they often jam your brain.");
+        video2.AddComment("@aruwaurachi9649", "Just starting using Unity, eager to be skilled enough to participate in a game jam ! :)");
+        video2.AddComment("@nicholaswilliams6475", "I actually registered for my first game jam in July! This video is very helpful for my first time!");
+        video2.AddComment("@LukeKondor", "Haven't done a Game Jam yet. I definitely want to give it a go, though. Looks terrifyingly fun.");
 
-        Video video3 = new Video("Mathematics in Animation Explained", "AnimationGuru", "842");
-        video3.AddComment("@Animator101", "This blew my mind!");
-        video3.AddComment("@MathGeek", "Amazing combination of animation and math!");
-        video3.AddComment("@ArtLover", "This is why I love animation!");
+        Video video3 = new Video("Animation vs. Math", "Alan Becker", "842");
+        video3.AddComment("@3blue1brown", "Utterly delightful!");
+        video3.AddComment("@loop4967", "As a computer engineer, this must be the best animation I've ever seen.  Thank you for doing this!");
+        video3.AddComment("@nothing91109", "To the math nerd that did the equation and to the animator, heavily respected");
 
         videos.Add(video1);
         videos.Add(video2);
