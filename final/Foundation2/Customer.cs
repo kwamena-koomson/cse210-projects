@@ -2,43 +2,36 @@ using System;
 
 public class Customer
 {
-    // Member variables to store customer name and address
+    
     private string _name;
     private Address _address;
 
-    // Default constructor
-    public Customer()
-    {
-
-    }
-
-    // Parameterized constructor to initialize customer with name
-    public Customer(string name)
+    // Constructor to initialize customer information
+    public Customer(string name, Address address)
     {
         _name = name;
+        _address = address;
     }
 
-    // Method to get the customer's name
-    public string DisplayName()
+    // Method to check if the customer's address is in the USA
+    public bool isFromUSA()
     {
+        // Check if the customer's address is in the USA using the Address class method
+        return _address.isUSA() ? true : false;
+    }
+    
+    // Method to get the customer's name
+    public string GetName()
+    {
+        // Return the customer's name
         return _name;
     }
 
-    // Method to set the customer's address
-    public void SetAddress(string street, string city, string stateOrProvince, string country)
+    // Method to generate the customer's address
+    public string GenerateAddress()
     {
-        _address = new Address(street, city, stateOrProvince, country); 
-    }
-
-    // Method to get the formatted address of the customer
-    public string DisplayAddress()
-    {
-        return _address.GetAddress(); 
-    }
-
-    // Method to check if the customer's address is international
-    public bool GetInternational()
-    {
-        return _address.IsInternational(); 
+        // Generate the address using the Address class method and return it
+        string generatedAddress = _address.GenerateAddress();
+        return generatedAddress;
     }
 }

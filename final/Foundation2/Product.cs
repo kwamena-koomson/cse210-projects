@@ -2,47 +2,48 @@ using System;
 
 public class Product
 {
-    private string _name; // Name of the product
-    private string _productID; // ID of the product
-    private double _price; // Price per unit of the product
-    private int _quantity; // Quantity of the product
+    // Private fields to store product information
+    private string _name; // Product name
+    private string _productID; // Product ID
+    private double _price; // Product price
+    private int _quantity; // Product quantity
 
-    // Constructor to initialize a product with its name, ID, price, and quantity
+    // Constructor to initialize product with name, ID, price, and quantity
     public Product(string name, string productID, double price, int quantity)
     {
-        _name = name;
-        _productID = productID;
-        _price = price;
-        _quantity = quantity;
+        _name = name; 
+        _productID = productID; 
+        _price = price; 
+        _quantity = quantity; 
     }
 
-    // Method to calculate the total price of the product (price per unit * quantity)
+    // Method to calculate the total price of the product (price * quantity)
     public double CalculatePrice()
     {
-        return _price * _quantity; // Return the total price of the product
+        return _price * _quantity; 
     }
 
     // Method to get the name of the product
     public string GetName()
     {
-        return _name; // Return the name of the product
+        return _name; 
     }
 
-    // Method to get the ID of the product
+    // Method to get the product ID
     public string GetProductID()
     {
-        return _productID; // Return the ID of the product
+        return _productID; 
     }
 
-    // Method to get the price per unit of the product
+    // Method to get the price of the product
     public double GetPrice()
     {
-        return _price; // Return the price per unit of the product
+        return _price; 
     }
 
     // Method to get the quantity of the product
     public int GetQuantity()
     {
-        return _quantity; // Return the quantity of the product
+        return _quantity; 
     }
 }

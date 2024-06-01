@@ -2,44 +2,33 @@ using System;
 
 public class Address
 {
-    // Member variables to store address components
+    // Private fields to store address components
     private string _street;
     private string _city;
-    private string _stateOrProvince;
+    private string _state;
     private string _country;
 
-    // Default constructor
-    public Address()
-    {
-
-    }
-
-    // Parameterized constructor to initialize address components
-    public Address(string street, string city, string stateOrProvince, string country)
+    // Constructor to initialize address components
+    public Address(string street, string city, string state, string country)
     {
         _street = street;
         _city = city;
-        _stateOrProvince = stateOrProvince;
+        _state = state;
         _country = country;
     }
 
-    // Method to determine if the address is international based on country
-    public bool IsInternational()
+    // Method to check if the address is in the USA
+    public bool isUSA()
     {
-        bool isInternational = true;
-        if(_country.ToLower() == "usa") 
-        {
-            isInternational = false; 
-            return isInternational;
-        } else {
-            return isInternational; 
-        }
+        // Check if the country is "USA" and return true, otherwise return false
+        return _country == "USA" ? true : false;
     }
 
-    // Method to get the complete address as a formatted string
-    public string GetAddress()
+    // Method to generate a formatted address string
+    public string GenerateAddress()
     {
-        string address = $"{_street}, {_city}, {_stateOrProvince}, {_country.ToUpper()}";
-        return address; 
+        // Concatenate address components into a formatted string
+        string address = _street + ", " + _city + "\n" + _state + ", " + _country;
+        return address;
     }
 }
