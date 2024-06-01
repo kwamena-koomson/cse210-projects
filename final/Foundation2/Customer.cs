@@ -27,18 +27,18 @@ public class Customer
     // Method to set the customer's address
     public void SetAddress(string street, string city, string stateOrProvince, string country)
     {
-        _address = new Address(street, city, stateOrProvince, country); // Create new address object
+        _address = new Address(street, city, stateOrProvince, country); 
     }
 
     // Method to get the formatted address of the customer
     public string DisplayAddress()
     {
-        return _address.GetAddress(); // Get the address string
+        return _address.GetAddress(); 
     }
 
     // Method to check if the customer's address is international
     public bool GetInternational()
     {
-        return _address.IsInternational(); // Get international status from address object  
+        return _address.IsInternational(); 
     }
 }

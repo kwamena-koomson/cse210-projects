@@ -1,33 +1,75 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
-    {   
-        Customer customer = new Customer("John Doe");
-        customer.SetAddress("116 W Main St", "West Branch", "Idaho", "USA");
+    {
+        // Order 1
+        Address addressGhana = new Address("14 Ring Road Central", "Accra", "Greater Accra Region", "Ghana"); 
+        Customer customer1 = new Customer("Kwamena Koomson", address1); 
+        List<Product> productsList1 = new List<Product>(); 
 
-        Order order = new Order(customer);
-        order.AddProduct("Iphone 14", "19853A", 888.0, 2);
-        order.AddProduct("Vans Old School", "VA215O03N", 76.19, 1);
-        order.AddProduct("Fitbit SmartWatch", "F12059", 106.59, 2);
+        // Creating product objects for order 1
+        Product product1 = new Product("Wireless Mouse", "WM100", 19.99, 3);
+        Product product2 = new Product("Bluetooth Earphones", "BE200", 49.99, 1);
+        Product product3 = new Product("USB Flash Drive", "USB32", 12.99, 2);
 
-        Console.Clear();
-        order.DisplayPackingLabel();
-        order.DisplayShippingLabel();
-        order.DisplayTotalCost();
+        // Adding products to the product list for order 1
+        productsList1.Add(p1001);
+        productsList1.Add(p1002);
+        productsList1.Add(p1003);
 
-        Customer customer1 = new Customer("Jane Peters");
-        customer1.SetAddress("Av Revolucion 721", "Tijuana", "Baja California", "MX");
+        // Creating an order object for order 1 with the provided products and customer
+        Order order1 = new Order(productsList1, customer1);
 
-        Order order1 = new Order(customer1);
-        order1.AddProduct("Microwave Panasonic", "B005GSPVHS", 319.0, 1);
-        order1.AddProduct("Cargo Wrangler Shorts", "B08RBHL3HW", 26.85, 4);
-        order1.AddProduct("Drone with 1080P camera", "B0C5X5WMXN", 399.99, 1);
+        Console.WriteLine("Order Number: 1");
+        order1.DisplayResults(); // Displaying the results of order 1
+        Console.WriteLine();
 
-        Console.WriteLine("\nSecond Order");
-        order1.DisplayPackingLabel();
-        order1.DisplayShippingLabel();
-        order1.DisplayTotalCost();
+        // Order 2
+        Address address2 = new Address("123 Main St", "Anytown", "CA", "USA"); 
+        Customer customer2 = new Customer("Obedient A. Ankrah", address2); 
+        List<Product> productsList2 = new List<Product>(); 
+
+        // Creating product objects for order 2
+        Product p2001 = new Product("Highlighter Set", "HLSET", 4.99, 3);
+        Product p2002 = new Product("Index Cards", "IC100", 1.75, 2);
+        Product p2003 = new Product("Scientific Calculator", "SCC1000", 12.50, 1);
+
+        // Adding products to the product list for order 2
+        productsList2.Add(p2001);
+        productsList2.Add(p2002);
+        productsList2.Add(p2003);
+
+        // Creating an order object for order 2 with the provided products and customer
+        Order order2 = new Order(productsList2, customer2);
+
+        Console.WriteLine("Order Number: 2");
+        order2.DisplayResults(); // Displaying the results of order 2
+        Console.WriteLine();
+
+        // Order 3
+        Address address3 = new Address("Kungsgatan 1", "Stockholm", "SE-111 43", "Sweden"); 
+        Customer customer3 = new Customer("Eric Boateng", address3); 
+        List<Product> productsList3 = new List<Product>(); 
+
+        // Creating product objects for order 3
+        Product p3001 = new Product("Backpack", "BP300", 19.99, 1);
+        Product p3002 = new Product("Laptop Sleeve", "LS100", 12.50, 2);
+        Product p3003 = new Product("Sticky Notes", "SN500", 2.49, 5);
+
+
+        // Adding products to the product list for order 3
+        productsList3.Add(p3001);
+        productsList3.Add(p3002);
+        productsList3.Add(p3003);
+
+        // Creating an order object for order 3 with the provided products and customer
+        Order order3 = new Order(productsList3, customer3);
+
+        Console.WriteLine("Order Number: 3");
+        order3.DisplayResults(); 
+        Console.WriteLine();
     }
 }

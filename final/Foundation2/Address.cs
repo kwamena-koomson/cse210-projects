@@ -27,12 +27,12 @@ public class Address
     public bool IsInternational()
     {
         bool isInternational = true;
-        if(_country.ToLower() == "usa") // Check if the country is USA
+        if(_country.ToLower() == "usa") 
         {
-            isInternational = false; // If USA, address is not international
+            isInternational = false; 
             return isInternational;
         } else {
-            return isInternational; // If not USA, address is international
+            return isInternational; 
         }
     }
 
@@ -40,6 +40,6 @@ public class Address
     public string GetAddress()
     {
         string address = $"{_street}, {_city}, {_stateOrProvince}, {_country.ToUpper()}";
-        return address; // Return the formatted address string
+        return address; 
     }
 }
