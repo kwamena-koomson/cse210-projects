@@ -1,34 +1,56 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        List<Video> videos = new List<Video>();
 
-        Video video1 = new Video("What are logical operators?", "Bro Code", "302");
-        video1.AddComment("@LetsGoSalmon", "Hi! Are we getting any more C++ content this year?");
-        video1.AddComment("@alfiemathias4710", "Very useful thanks");
-        video1.AddComment("@karnprashantpk", "#include <love for BroCode>");
+        List<Video> videosList = new List<Video>();
 
-        Video video2 = new Video("HOW TO GAME JAM!", "Brackeys", "541");
-        video2.AddComment("@Dorbellprod", "The worst part about game jams is that they often jam your brain.");
-        video2.AddComment("@aruwaurachi9649", "Just starting using Unity, eager to be skilled enough to participate in a game jam ! :)");
-        video2.AddComment("@nicholaswilliams6475", "I actually registered for my first game jam in July! This video is very helpful for my first time!");
-        video2.AddComment("@LukeKondor", "Haven't done a Game Jam yet. I definitely want to give it a go, though. Looks terrifyingly fun.");
+        // Video 1
+        Video video1 = new Video("Living in the Heart of Peru: Exploring Ancient Ruins", "Juan Perez Garcia", 480);
 
-        Video video3 = new Video("Animation vs. Math", "Alan Becker", "842");
-        video3.AddComment("@3blue1brown", "Utterly delightful!");
-        video3.AddComment("@loop4967", "As a computer engineer, this must be the best animation I've ever seen.  Thank you for doing this!");
-        video3.AddComment("@nothing91109", "To the math nerd that did the equation and to the animator, heavily respected");
+        Comment video1Comment1 = new Comment("Luisa", "This video is truly inspiring! I love how you explore the ancient ruins and share their history.");
+        Comment video1Comment2 = new Comment("Carlos", "Your content always surprises me. I'm glad you're showcasing the beauty of our country.");
+        Comment video1Comment3 = new Comment("Maria", "Wonderful! I would love to visit those places someday.");
 
-        videos.Add(video1);
-        videos.Add(video2);
-        videos.Add(video3);
+        video1.ListComment(video1Comment1);
+        video1.ListComment(video1Comment2);
+        video1.ListComment(video1Comment3);
 
-        foreach (Video video in videos)
+        videosList.Add(video1);
+
+        // Video 2
+        Video video2 = new Video("Hidden Gems of Peru: Uncovering Mysteries in the Andes", "Jhon Mercedes Palomino", 975);
+
+        Comment video2Comment1 = new Comment("Diego", "What an incredible adventure! I love how you showcase the mysteries of the Andes and invite us to discover more about our history.");
+        Comment video2Comment2 = new Comment("Valeria", "Your videos always transport me to new places. Thank you for sharing these hidden gems.");
+        Comment video2Comment3 = new Comment("Camila", "The views are simply breathtaking. I'm proud to be Peruvian.");
+
+        video2.ListComment(video2Comment1);
+        video2.ListComment(video2Comment2);
+        video2.ListComment(video2Comment3);
+
+        videosList.Add(video2);
+
+        // Video 3
+        Video video3 = new Video("Peruvian Cuisine: A Gastronomic Adventure", "Miriam Velasquez Soto", 650);
+
+        Comment video3Comment1 = new Comment("Gabriel", "My mouth was watering while watching this video! Our cuisine is truly unique and delicious.");
+        Comment video3Comment2 = new Comment("Renata", "I love how you present our traditional dishes. I definitely need to try them all.");
+        Comment video3Comment3 = new Comment("Fernando", "Peruvian food is famous worldwide, and your videos perfectly capture its essence.");
+
+        video3.ListComment(video3Comment1);
+        video3.ListComment(video3Comment2);
+        video3.ListComment(video3Comment3);
+
+        videosList.Add(video3);
+
+        foreach (Video video in videosList)
         {
-            video.DisplayVideoInfo();
+            video.DisplayInfo();
+            Console.WriteLine();
             Console.WriteLine();
         }
     }
